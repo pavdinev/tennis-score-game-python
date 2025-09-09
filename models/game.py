@@ -15,7 +15,10 @@ class Game:
             self.p2.points += 1
         self.print_score()
         if self.is_game_over():
-            winner = self.p1 if self.p1.points > self.p2.points else self.p2
+            if self.p1.points > self.p2.points:
+                winner = self.p1
+            else: 
+                winner = self.p2
             print(f"Game won by {winner.name}!\n")
             winner.games += 1
             self.p1.points = 0
